@@ -30,4 +30,18 @@ h1 p :first-child {
 
 #login {
 	text-align: center; 
+	color: white;
+	border-radius: 5px;
+}
+
+#signup {
+	text-align: center;
+	color: #000000;
+	text-decoration: underline;
+}
+
+#forgotpass {
+	text-align: center;
+	color: #000000;
+	text-decoration: underline;
 }
