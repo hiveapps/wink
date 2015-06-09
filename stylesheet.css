@@ -16,15 +16,13 @@ h3 {
 	height: 50px;
 	display: block;
 	background-color: #ffffff;
-	border: #000000 .25em solid;
 }
 /* this is the login box */
 #loginbox {
 	width: 150px;
 	height: 225px;
 	background-color: #ffffff;
-	border: #000000 .25em solid;
-	margin-top: 25%;
+	margin-top: 45%;
 	margin: auto;
 }
 /* this is the "Login" and "Password" text fields */
