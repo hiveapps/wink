@@ -1,7 +1,7 @@
 /* this is the "Missed Connections" header */
 h1 {
 	text-align: center;
-	color: #ffffff;
+	color: #000000;
 }
 
 /* this is the "Login" header */
@@ -16,14 +16,14 @@ h3 {
 	height: 50px;
 	display: block;
 	background-color: #ffffff;
-	border: #000000 1em solid;
+	border: #000000 .25em solid;
 }
 /* this is the login box */
 #loginbox {
 	width: 150px;
 	height: 225px;
 	background-color: #ffffff;
-	border: #000000 1em solid;
+	border: #000000 .25em solid;
 	margin-top: 25%;
 	margin: auto;
 }
