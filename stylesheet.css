@@ -1,47 +1,47 @@
+/* this is the "Missed Connections" header */
 h1 {
 	text-align: center;
 	color: #ffffff;
 }
 
+/* this is the "Login" header */
 h3 {
 	text-align: center;
 	color: #ffffff;
+	font-size: 1.5em;
 }
-
-h1 p :first-child {
-	text-align: center;
-	color: black;
-}
-
+/* this is the header div */
 #header {
 	width: 100%;
 	height: 50px;
 	display: block;
 	background-color: #0066FF;
 }
-
+/* this is the login box */
 #loginbox {
 	width: 150px;
-	height: 300px;
+	height: 225px;
 	background-color: #0066FF;
 	margin-top: 25%;
 	margin: auto;
 }
-
+/* this is the "Login" and "Password" text fields */
 #login {
 	text-align: center; 
 	color: white;
 	border-radius: 5px;
 }
-
+/* this is the "Signup" link */
 #signup {
 	text-align: center;
 	color: #000000;
 	text-decoration: underline;
+	font-size: .5em;
 }
-
+/* this is the "Forgot Password" link */
 #forgotpass {
 	text-align: center;
 	color: #000000;
 	text-decoration: underline;
+	font-size: .5em;
 }
