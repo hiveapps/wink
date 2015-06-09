@@ -10,7 +10,7 @@ h1 p :first-child {
 
 #header {
 	width: 100%;
-	height: 25px;
+	height: 75px;
 	display: block;
 	background-color: #0066FF;
 }
@@ -18,4 +18,6 @@ h1 p :first-child {
 #login {
 	width: 150px;
 	height: 300px;
+	background-color: #0066FF;
+	margin: 50% 50% 50% 50%;
 }
