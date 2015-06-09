@@ -7,7 +7,7 @@ h1 {
 /* this is the "Login" header */
 h3 {
 	text-align: center;
-	color: #ffffff;
+	color: #000000;
 	font-size: 1.5em;
 }
 /* this is the header div */
@@ -15,20 +15,22 @@ h3 {
 	width: 100%;
 	height: 50px;
 	display: block;
-	background-color: #0066FF;
+	background-color: #ffffff;
+	border: #000000 1em solid;
 }
 /* this is the login box */
 #loginbox {
 	width: 150px;
 	height: 225px;
-	background-color: #0066FF;
+	background-color: #ffffff;
+	border: #000000 1em solid;
 	margin-top: 25%;
 	margin: auto;
 }
 /* this is the "Login" and "Password" text fields */
 #login {
 	text-align: center; 
-	color: white;
+	color: #000000;
 	border-radius: 5px;
 }
 /* this is the "Signup" link */
