@@ -1,0 +1,12 @@
+{
+  "name": "wink",
+  "app_id": "b6c7faea",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

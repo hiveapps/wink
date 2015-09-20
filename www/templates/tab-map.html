@@ -1,0 +1,73 @@
+<ion-view view-title="Nearby" hide-back-button="true">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-search" menu-toggle="left" style="color: #ffffff;">
+    </button>
+  </ion-nav-buttons>
+  <div class="tabs-striped tabs-top sub_map">
+    <div class="tabs sub-header">
+      <a class="tab-item" ui-sref="tab.dash">
+        Thread
+      </a>
+      <a class="tab-item active" ui-sref="tab.map">
+        Nearby
+      </a>
+    </div>
+  </div>
+  <ion-content class="myContent">
+    
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+    </ion-refresher>
+    
+    <div class="list has-subheader" style="padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px;" ng-controller="NearbyCtrl" ng-click="openPopover($event)">
+      <div class="item item-avatar item-icon-right nearby_link" ui-sref="#">
+        <img src="#">
+        <p> - {{}}</p>
+      </div>
+    </div>
+    <div class="list has-subheader" style="padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px;" ng-controller="NearbyCtrl" ng-click="openPopover($event)">
+      <div class="item item-avatar item-icon-right nearby_link" ui-sref="#">
+        <img src="#">
+        <p> - {{}}</p>
+      </div>
+    </div>
+    <div class="list has-subheader" style="padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px;" ng-controller="NearbyCtrl" ng-click="openPopover($event)">
+      <div class="item item-avatar item-icon-right nearby_link" ui-sref="#">
+        <img src="#">
+        <p> - {{}}</p>
+      </div>
+    </div>
+    <div class="list has-subheader" style="padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px;" ng-controller="NearbyCtrl" ng-click="openPopover($event)">
+      <div class="item item-avatar item-icon-right nearby_link" ui-sref="#">
+        <img src="#">
+        <p> - {{}}</p>
+      </div>
+    </div>
+    
+    <script id="nearby-popover.html" type="text/ng-template">
+      <ion-popover-view>
+        <ion-header-bar>
+        </ion-header-bar>
+        <ion-content>
+          <div class="row" style="vertical-align: center;">
+            <img src="#" style="width: 150px; height: 150px; border-radius: 30px; margin: 5px auto;">
+          </div>
+          <div class="row">  
+            <button class="button button-block button-dark" style="width: 90%; margin: 10px auto; text-decoration: none;">
+            Wink
+            </button>
+          </div>
+        </ion-content>
+      </ion-popover-view>
+    </script>
+  </ion-content>
+</ion-view>
+
+
+<!--
+    <div class="list has-header" style="padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px;" ng-controller="NearbyCtrl" ng-click="openPopover($event)">
+      <div class="item item-avatar item-icon-right nearby_link" ui-sref="#">
+        <img src="#">
+        <p> - {{}}</p>
+      </div>
+    </div>
+-->

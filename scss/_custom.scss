@@ -1,0 +1,139 @@
+//custom sass goes within here
+
+//app body styling
+.myContent{
+	background-color: #f4f6fe;
+}
+
+//header bar styling
+.bar {
+	background-color: #45C496;
+}
+
+//styling for textarea placeholder
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #000000; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #000000; }
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #000000;
+  text-indent: 3px; }
+  
+//post button styling
+.platform-ios .post_tab{
+  background-color: #009161 !important;
+  color: #ffffff !important;
+  height: 50px !important;
+  margin-bottom: 1px !important;
+}
+
+.platform-android .post_tab{
+  background-color: #009161 !important;
+  color: #ffffff !important;
+  height: 49px !important;
+}
+
+//this makes the subheader show up on Android
+.platform-android .sub-header{
+  margin-top: 50px !important;
+}
+
+.sub_map{
+  margin-bottom: -20px !important;
+}
+
+//Styling for when a 'button-dark' button is clicked
+.button.button-dark.active, .button.button-dark.activated{
+  background-color: #45C496;
+}
+
+//Profile pic styling
+.profile_pic{
+  max-width: 75px !important;
+  max-height: 75px !important;
+  margin: auto !important;
+}
+
+//Styling for flipper
+.tile { color:white; padding:15px; box-sizing:border-box; -moz-box-sizing:border-box; }
+
+flipper {
+    width:100%;
+    height:100%;
+    display:block;
+    perspective:1000;
+
+    span {
+        color:white;
+    }
+
+    >div.flipper {
+        width:100%;
+        height:100%;
+        position:relative;
+        transform-style:preserve-3d;
+
+        .front, .back {
+            float:left;
+            display:block;
+            width:100%;
+            height:100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            position:absolute;
+            transform-style:preserve-3d;
+            transition:transform ease 500ms;
+        }
+
+        .front {
+            z-index:2;
+            background: transparent;
+
+            /* front tile styles go here! */
+        }
+
+        .back {
+            background: transparent;
+        }
+    }
+}
+
+flipper[horizontal] {
+    .front {
+        transform:rotateY(0deg);
+    }
+
+    .back {
+        transform:rotateY(-180deg);
+    }
+
+    div.flipper.flipped {
+        .front {
+            transform:rotateY(180deg);
+        }
+
+        .back {
+            transform:rotateY(0deg);
+        }
+    }
+}
+
+flipper[vertical] {
+    .front {
+        transform:rotateX(0deg);
+    }
+
+    .back {
+        transform:rotateX(-180deg);
+    }
+
+    div.flipper.flipped {
+        .front {
+            transform:rotateX(180deg);
+        }
+
+        .back {
+            transform:rotateX(0deg);
+        }
+    }
+}
