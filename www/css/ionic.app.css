@@ -7527,7 +7527,9 @@ a.button {
 .platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
   top: 64px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-subheader {
-  top: 108px; }
+  top: 50px; }
+.platform-android.platform-cordova:not(.fullscreen) .has-subheader {
+  top: 50px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-tabs-top {
   top: 113px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-subheader.has-tabs-top {
@@ -7690,7 +7692,7 @@ a.button {
   transition-duration: 0s; }
 
 .myContent {
-  background-color: #f4f6fe; }
+  background-color: #ffffff; }
 
 .bar {
   background-color: #45C496; }

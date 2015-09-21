@@ -2,7 +2,7 @@
 
 //app body styling
 .myContent{
-	background-color: #f4f6fe;
+	background-color: #ffffff;
 }
 
 //header bar styling
@@ -33,6 +33,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   height: 49px !important;
 }
 
+
 //this makes the subheader show up on Android
 .platform-android .sub-header{
   margin-top: 50px !important;
@@ -42,98 +43,25 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   margin-bottom: -20px !important;
 }
 
+
+//this fixes the sizing of the 'has-subheader' class within the "Nearby" tab
+.platform-ios.platform-cordova:not(.fullscreen) .has-subheader {
+  top: 50px !important; 
+}
+.platform-android.platform-cordova:not(.fullscreen) .has-subheader {
+  top: 50px !important; 
+}
+
+
 //Styling for when a 'button-dark' button is clicked
 .button.button-dark.active, .button.button-dark.activated{
   background-color: #45C496;
 }
+
 
 //Profile pic styling
 .profile_pic{
   max-width: 75px !important;
   max-height: 75px !important;
   margin: auto !important;
-}
-
-//Styling for flipper
-.tile { color:white; padding:15px; box-sizing:border-box; -moz-box-sizing:border-box; }
-
-flipper {
-    width:100%;
-    height:100%;
-    display:block;
-    perspective:1000;
-
-    span {
-        color:white;
-    }
-
-    >div.flipper {
-        width:100%;
-        height:100%;
-        position:relative;
-        transform-style:preserve-3d;
-
-        .front, .back {
-            float:left;
-            display:block;
-            width:100%;
-            height:100%;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            position:absolute;
-            transform-style:preserve-3d;
-            transition:transform ease 500ms;
-        }
-
-        .front {
-            z-index:2;
-            background: transparent;
-
-            /* front tile styles go here! */
-        }
-
-        .back {
-            background: transparent;
-        }
-    }
-}
-
-flipper[horizontal] {
-    .front {
-        transform:rotateY(0deg);
-    }
-
-    .back {
-        transform:rotateY(-180deg);
-    }
-
-    div.flipper.flipped {
-        .front {
-            transform:rotateY(180deg);
-        }
-
-        .back {
-            transform:rotateY(0deg);
-        }
-    }
-}
-
-flipper[vertical] {
-    .front {
-        transform:rotateX(0deg);
-    }
-
-    .back {
-        transform:rotateX(-180deg);
-    }
-
-    div.flipper.flipped {
-        .front {
-            transform:rotateX(180deg);
-        }
-
-        .back {
-            transform:rotateX(0deg);
-        }
-    }
 }
