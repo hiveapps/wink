@@ -7527,9 +7527,7 @@ a.button {
 .platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
   top: 64px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-subheader {
-  top: 50px; }
-.platform-android.platform-cordova:not(.fullscreen) .has-subheader {
-  top: 50px; }
+  top: 108px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-tabs-top {
   top: 113px; }
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-subheader.has-tabs-top {
@@ -7692,7 +7690,7 @@ a.button {
   transition-duration: 0s; }
 
 .myContent {
-  background-color: #ffffff; }
+  background-color: #E8E8E8; }
 
 .bar {
   background-color: #45C496; }
@@ -7724,6 +7722,12 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 .sub_map {
   margin-bottom: -20px !important; }
 
+.platform-ios.platform-cordova:not(.fullscreen) .has-subheader {
+  top: 50px !important; }
+
+.platform-android.platform-cordova:not(.fullscreen) .has-subheader {
+  top: 50px !important; }
+
 .button.button-dark.active, .button.button-dark.activated {
   background-color: #45C496; }
 
@@ -7731,56 +7735,3 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   max-width: 75px !important;
   max-height: 75px !important;
   margin: auto !important; }
-
-.tile {
-  color: white;
-  padding: 15px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box; }
-
-flipper {
-  width: 100%;
-  height: 100%;
-  display: block;
-  perspective: 1000; }
-  flipper span {
-    color: white; }
-  flipper > div.flipper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d; }
-    flipper > div.flipper .front, flipper > div.flipper .back {
-      float: left;
-      display: block;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      position: absolute;
-      transform-style: preserve-3d;
-      transition: transform ease 500ms; }
-    flipper > div.flipper .front {
-      z-index: 2;
-      background: transparent;
-      /* front tile styles go here! */ }
-    flipper > div.flipper .back {
-      background: transparent; }
-
-flipper[horizontal] .front {
-  transform: rotateY(0deg); }
-flipper[horizontal] .back {
-  transform: rotateY(-180deg); }
-flipper[horizontal] div.flipper.flipped .front {
-  transform: rotateY(180deg); }
-flipper[horizontal] div.flipper.flipped .back {
-  transform: rotateY(0deg); }
-
-flipper[vertical] .front {
-  transform: rotateX(0deg); }
-flipper[vertical] .back {
-  transform: rotateX(-180deg); }
-flipper[vertical] div.flipper.flipped .front {
-  transform: rotateX(180deg); }
-flipper[vertical] div.flipper.flipped .back {
-  transform: rotateX(0deg); }

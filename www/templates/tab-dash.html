@@ -6,7 +6,7 @@
     <!-- <input type="search" placeholder="Search..." style="width: 275px; background-color: #ffffff; border-radius: 5px; margin-right: -282px;"> -->
   </ion-nav-buttons>
   
-  <div class="tabs-striped tabs-top">
+  <div class="tabs-striped tabs-top" style="border-bottom: .2em solid black;">
     <div class="tabs sub-header">
       <a class="tab-item active" ui-sref="tab.dash">
         Thread
@@ -24,10 +24,10 @@
        
       <div class="list card has-header" style="width: 100%; margin-left: 0px; padding: 0;">
         
-        <div class="item item-avatar">
+        <div class="item item-avatar threadCard-header" style="background-color: #45C496; border-bottom: .1em solid black;">
           <img src="img/Wink Bunny LG.svg">
-          <h2>First Name</h2>
-          <p>- about 30 minutes ago</p>
+          <h2 style="color: #ffffff;">First Name</h2>
+          <p style="color: #ffffff;">- about 30 minutes ago</p>
         </div>
       
         <div class="item item-body">
@@ -38,7 +38,7 @@
           </p>
         </div>
       
-        <div class="item tabs tabs-secondary tabs-icon-left" ng-controller="AcceptCtrl">
+        <div class="item tabs tabs-secondary tabs-icon-left" ng-controller="AcceptCtrl" style="background-color: #ffffff;">
           <a class="tab-item" href="#" style="font-size: 12px; color: #009161;">
             <i class="icon ion-checkmark-round"></i>
             Accept
@@ -56,7 +56,7 @@
       </div>
       
       <script id="report-modal.html" type="text/ng-template">
-        <div class="modal myContent">
+        <div class="modal">
           <ion-header-bar>
             <div style="margin-left: 5px">
               <button class="button button-small button-clear" style="color: #ffffff; font-size: 16px;" ng-click="closeModal()">
@@ -70,11 +70,11 @@
           </ion-header-bar>
           <ion-content>
             <p style="margin-left: 5px; margin-top: 5%; font-size: 18px; line-height: 150%; text-align: center;">Oh, no! We're sorry you had a poor experience, here at Wink we are dedicated to keeping your thread clean! Please help us get rid of this trash by clarifying why you are reporting this post.</p>
-            <div class="list" style="margin-top: 10%; background-color: #f4f6fe;">
+            <div class="list" style="margin-top: 10%;">
               
               <label class="item item-icon-left item-radio">
                 <input type="radio" name="group" value="spam">
-                <div class="item-content" style="background-color: #f4f6fe;">
+                <div class="item-content">
                   Spam or Scam
                 </div>
                 <i class="radio-icon ion-checkmark"></i>
@@ -82,7 +82,7 @@
               
               <label class="item item-icon-left item-radio">
                 <input type="radio" name="group" value="hate">
-                <div class="item-content" style="background-color: #f4f6fe;">
+                <div class="item-content">
                   Contains Hate Speech
                 </div>
                 <i class="radio-icon ion-checkmark"></i>
@@ -90,7 +90,7 @@
               
               <label class="item item-icon-left item-radio">
                 <input type="radio" name="group" value="violence">
-                <div class="item-content" style="background-color: #f4f6fe;">
+                <div class="item-content">
                   Promotes Violence/Hateful Actions
                 </div>
                 <i class="radio-icon ion-checkmark"></i>
@@ -98,7 +98,7 @@
               
               <label class="item item-icon-left item-radio">
                 <input type="radio" name="group" value="duplicate">
-                <div class="item-content" style="background-color: #f4f6fe;">
+                <div class="item-content">
                   Duplicate or Fake
                 </div>
                 <i class="radio-icon ion-checkmark"></i>
