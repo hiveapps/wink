@@ -1,49 +1,58 @@
 var wink = angular.module('wink.controllers', []);
 
 //Login Controller
-wink.controller("AppCtrl", function($scope, $state, $firebaseAuth, auth) {
- 
-    $scope.login = function() {
-      auth.$authWithOAuthRedirect("facebook").then(function(authData) {
-        // User successfully logged in
-      }).catch(function(error) {
-        if (error.code === "TRANSPORT_UNAVAILABLE") {
-          auth.$authWithOAuthPopup("facebook").then(function(authData) {
-            // User successfully logged in. We can log to the console
-            // since we’re using a popup here
-            console.log(authData);
-          });
-        } else {
-        // Another error occurred
-          console.log(error);
-        }
-      });
-    };
-    auth.$onAuth(function(authData) {
-      if (authData === null) {
-        console.log("Not logged in yet");
-      } else {
-        console.log("Logged in as", authData.uid);
-        $state.go('tab.dash');
-      }
-      $scope.authData = authData; // This will display the user's name in our view
+wink.controller("AppCtrl", function($scope, $state, $firebaseAuth, $cordovaOauth, Auth) {
+   
+  $scope.login = function() {
+    $cordovaOauth.facebook("1684910905080080", ["email"]).then(function(result) {
+        Auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
+            console.log(JSON.stringify(authData));
+            $state.go('tab.dash');
+        }, function(error) {
+            console.error("ERROR: " + error);
+        });
+    }, function(error) {
+        console.log("ERROR: " + error);
     });
+  };
+  Auth.$onAuth(function(authData) {
+    if (authData === null) {
+      $state.go('login');
+    } else {
+      $state.go('tab.dash');
+    }
+    $scope.authData = authData; // This will display the user's name in our view
+  });
 });
 
-//wink.controller("AppCtrl", function($scope, $state, $firebaseAuth, $cordovaOauth, auth) {
-   
+//Testing this facebook login
+//wink.controller("AppCtrl", function($scope, $state, $firebaseAuth, Auth) {
+ 
 //    $scope.login = function() {
-//        $cordovaOauth.facebook("1684910905080080", ["email"]).then(function(result) {
-//            auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
-//                console.log(JSON.stringify(authData));
-//                $state.go('tab.dash');
-//            }, function(error) {
-//                console.error("ERROR: " + error);
-//            });
-//        }, function(error) {
-//            console.log("ERROR: " + error);
-//        });
-//    }
+//      Auth.$authWithOAuthRedirect("facebook").then(function(authData) {
+//        // User successfully logged in
+//      }).catch(function(error) {
+//        if (error.code === "TRANSPORT_UNAVAILABLE") {
+//          Auth.$authWithOAuthPopup("facebook").then(function(authData) {
+//            // User successfully logged in. We can log to the console
+//            // since we’re using a popup here
+//            console.log(authData);
+//          });
+//        } else {
+//        // Another error occurred
+//          console.error("ERROR: " + error);
+//        }
+//      });
+//    };
+//    Auth.$onAuth(function(authData) {
+//      if (authData === null) {
+//        $state.go('login');
+//      } else {
+//        console.log("Logged in as", authData.uid);
+//        $state.go('tab.dash');
+//      }
+//      $scope.authData = authData; // This will display the user's name in our view
+//    });
 //});
 
 //Totally functioning simple login

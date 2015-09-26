@@ -27,9 +27,9 @@ wink.factory('messageService', function($firebaseArray) {
 });
 
 //Auth Service
-wink.factory("auth", function($firebaseAuth) {
-  var fb = new Firebase("https//wink-connections.firebaseio.com/users");
-  return $firebaseAuth(fb);
+wink.factory("Auth", function($firebaseAuth) {
+  var usersRef = new Firebase("https://wink-connections.firebaseio.com/users");
+  return $firebaseAuth(usersRef);
 })
 
 //Return Service

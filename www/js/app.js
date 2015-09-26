@@ -6,7 +6,6 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 var wink = angular.module('wink', ['ionic', 'wink.controllers', 'wink.services', 'wink.directives', 'firebase', 'ngCordovaOauth'])
-var fb = new Firebase ("https://wink-connections.firebaseio.com");
 
 wink.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
