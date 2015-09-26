@@ -1,52 +1,53 @@
 var wink = angular.module('wink.controllers', []);
 
 //Login Controller
-//wink.controller("AppCtrl", function($scope, $state, $firebaseAuth, $cordovaOauth) {
-//  var fb = new Firebase("https://wink-connections.firebaseio.com");
-//  var auth = $firebaseAuth(fb);
-// 
-//    $scope.login = function() {
-//        $cordovaOauth.facebook("1684910905080080", ["email"]).then(function(result) {
-//            auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
-//                $state.go('tab.dash');
-//            }, function(error) {
-//                console.error("ERROR: " + error);
-//            });
-//        }, function(error) {
-//            console.log("ERROR: " + error);
-//        });
-//    }
-//});
+wink.controller("AppCtrl", function($scope, $state, $firebaseAuth, $cordovaOauth) {
+  
+  var auth = $firebaseAuth(fb);
+ 
+    $scope.login = function() {
+        $cordovaOauth.facebook("1684910905080080", ["email"]).then(function(result) {
+            auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
+                console.log(JSON.stringify(authData));
+                $state.go('tab.dash');
+            }, function(error) {
+                console.error("ERROR: " + error);
+            });
+        }, function(error) {
+            console.log("ERROR: " + error);
+        });
+    }
+});
 
 //Totally functioning simple login
-wink.controller("LoginCtrl", function($scope, $firebaseAuth, $state){
-var users = new Firebase("https://wink-connections.firebaseio.com/users");
+//wink.controller("LoginCtrl", function($scope, $firebaseAuth, $state){
+//var users = new Firebase("https://wink-connections.firebaseio.com/users");
 
-  $scope.register = function(username, password){
-    users.createUser({
-      email    : username,
-      password : password
-    }, function(error, userData) {
-      if (error) {
-        console.log("Error creating user:", error);
-      } else {
-        $state.go('tab.dash');
-      }
-    });
-  }
-  $scope.login = function(username, password){
-    users.authWithPassword({
-      email    : username,
-      password : password
-    }, function(error, authData) {
-      if (error) {
-        console.log("Login Failed!", error);
-      } else {
-        $state.go('tab.dash');
-      }
-    });
-  }
-});
+//  $scope.register = function(username, password){
+//    users.createUser({
+//      email    : username,
+//      password : password
+//    }, function(error, userData) {
+//      if (error) {
+//        console.log("Error creating user:", error);
+//      } else {
+//        $state.go('tab.dash');
+//      }
+//    });
+//  }
+//  $scope.login = function(username, password){
+//    users.authWithPassword({
+//      email    : username,
+//      password : password
+//    }, function(error, authData) {
+//      if (error) {
+//        console.log("Login Failed!", error);
+//      } else {
+//        $state.go('tab.dash');
+//      }
+//    });
+//  }
+//});
 
 //Submit post controller
 wink.controller('addController',function($scope,$firebaseArray, $state, postService){

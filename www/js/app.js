@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var wink = angular.module('wink', ['ionic', 'wink.controllers', 'wink.services', 'wink.directives', 'firebase'])
+var wink = angular.module('wink', ['ionic', 'wink.controllers', 'wink.services', 'wink.directives', 'firebase', 'ngCordovaOauth'])
 var fb = new Firebase ("https://wink-connections.firebaseio.com");
 
 wink.run(function($ionicPlatform) {
@@ -43,7 +43,6 @@ wink.config(function($stateProvider, $urlRouterProvider) {
   .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
-      controller: 'LoginCtrl'
   })
   .state('tab.dash', {
     url: '/dash',
@@ -181,6 +180,6 @@ wink.config(function($stateProvider, $urlRouterProvider) {
     });
 
   // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('tab/dash');
+      $urlRouterProvider.otherwise('/login');
 
 });
