@@ -62,6 +62,14 @@ wink.config(function($stateProvider, $urlRouterProvider) {
       }
     }
   })
+    .state('tab.postDetails', {
+    url: '/postDetails',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-postDetails.html',
+      }
+    }
+  })
   .state('tab.post', {
     url: '/post',
     views: {

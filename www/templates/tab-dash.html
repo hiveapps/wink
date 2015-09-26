@@ -24,13 +24,13 @@
        
       <div class="list card has-header" style="width: 100%; margin-left: 0px; padding: 0;">
         
-        <div class="item item-avatar threadCard-header" style="background-color: #45C496; border-bottom: .1em solid black;">
+        <div class="item item-avatar threadCard-header" style="background-color: #45C496; border-bottom: .1em solid black;" ui-sref="tab.postDetails">
           <img src="img/Wink Bunny LG.svg">
           <h2 style="color: #ffffff;">First Name</h2>
           <p style="color: #ffffff;">- about 30 minutes ago</p>
         </div>
       
-        <div class="item item-body">
+        <div class="item item-body" ui-sref="tab.postDetails">
           <p>
             This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
             the content is from a card-body consisting of an image and paragraph text. The footer
@@ -43,7 +43,7 @@
             <i class="icon ion-checkmark-round"></i>
             Accept
           </a>
-          <a class="tab-item flip" href="#" style="font-size: 12px; color: #0A60A0;">
+          <a class="tab-item flip" ui-sref="tab.postDetails" style="font-size: 12px; color: #0A60A0;">
             <i class="icon ion-pricetag"></i>
             Tag
           </a>
