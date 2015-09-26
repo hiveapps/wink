@@ -70,40 +70,12 @@
           </ion-header-bar>
           <ion-content>
             <p style="margin-left: 5px; margin-top: 5%; font-size: 18px; line-height: 150%; text-align: center;">Oh, no! We're sorry you had a poor experience, here at Wink we are dedicated to keeping your thread clean! Please help us get rid of this trash by clarifying why you are reporting this post.</p>
-            <div class="list" style="margin-top: 10%;">
+            <div class="list" ng-controller="MainCtrl">
               
-              <label class="item item-icon-left item-radio">
-                <input type="radio" name="group" value="spam">
-                <div class="item-content">
-                  Spam or Scam
-                </div>
-                <i class="radio-icon ion-checkmark"></i>
-              </label>
+              <ion-radio ng-repeat="item in clientSideList" ng-value="item.value" ng-model="data.clientSide">
+                {{ item.text }}
+              </ion-radio>
               
-              <label class="item item-icon-left item-radio">
-                <input type="radio" name="group" value="hate">
-                <div class="item-content">
-                  Contains Hate Speech
-                </div>
-                <i class="radio-icon ion-checkmark"></i>
-              </label>
-              
-              <label class="item item-icon-left item-radio">
-                <input type="radio" name="group" value="violence">
-                <div class="item-content">
-                  Promotes Violence/Hateful Actions
-                </div>
-                <i class="radio-icon ion-checkmark"></i>
-              </label>
-              
-              <label class="item item-icon-left item-radio">
-                <input type="radio" name="group" value="duplicate">
-                <div class="item-content">
-                  Duplicate or Fake
-                </div>
-                <i class="radio-icon ion-checkmark"></i>
-              </label>
-  
             </div>
           </ion-content>
         </div>

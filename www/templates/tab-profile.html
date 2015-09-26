@@ -1,4 +1,10 @@
 <ion-view view-title="Profile">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear" style="color: #387ef5; margin-left: 10px;" ng-click="mydisabled=false">
+      Edit
+    </button>
+  </ion-nav-buttons>
+  
   <ion-nav-buttons side="right">
     <a ui-sref="tab.account">    
       <button class="button button-icon button-clear ion-settings" style="color: #ffffff;">
@@ -50,10 +56,6 @@
         </label>
       
       </div>
-      
-      <button class="button button-full button-positive" style="margin-top: 8%;" ng-click="mydisabled=false">
-        Edit Profile
-      </button>
     
     </div>  
   

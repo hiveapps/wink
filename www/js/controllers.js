@@ -79,6 +79,32 @@ wink.controller('AcceptCtrl', function($scope, $element) {
 
 });
 
+//Radio Checkbox Controller
+wink.controller('MainCtrl', function($scope) {
+
+  $scope.clientSideList = [
+    { text: "Spam or Scam", value: "ss" },
+    { text: "Contains Hate Speech", value: "hs" },
+    { text: "Promotes Violence/Hateful Actions", value: "vh" },
+    { text: "Duplicate or Fake", value: "df" }
+  ];
+
+  $scope.serverSideList = [
+    { text: "Go", value: "go" },
+    { text: "Python", value: "py" },
+    { text: "Ruby", value: "rb" },
+    { text: "Java", value: "jv" }
+  ];
+  
+  $scope.data = {
+    clientSide: null
+  };
+  
+  $scope.serverSideChange = function(item) {
+    console.log("Selected Serverside, text:", item.text, "value:", item.value);
+  };
+  
+});
 
 // Report Controller
 wink.controller('ReportCtrl', function($scope, $ionicModal) {
