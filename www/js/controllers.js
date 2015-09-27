@@ -13,6 +13,9 @@ wink.controller('AppCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
   $scope.skip = function() {
     $ionicSlideBoxDelegate.slide(4);
   };
+  $scope.restart = function() {
+    $ionicSlideBoxDelegate.slide(1);
+  };
 
   // Called each time the slide changes
   $scope.slideChanged = function(index) {
@@ -317,7 +320,8 @@ wink.controller("ClickToEditCtrl", function($scope) {
 
 
 //Account Controller
-wink.controller('AccountCtrl', function($scope, $ionicModal) {
+wink.controller('AccountCtrl', function($scope, $state, $ionicModal) {
+  
   //Basic notification settings
   $scope.settingsList = [
     { text: "Connections", checked: true },
@@ -339,5 +343,10 @@ wink.controller('AccountCtrl', function($scope, $ionicModal) {
   };
   
   $scope.emailNotification = {checked: true};
+  
+  //Logout
+  $scope.logout = function() {
+    $state.go('login');
+  };
   
 });
