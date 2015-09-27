@@ -1,29 +1,52 @@
 var wink = angular.module('wink.controllers', []);
 
-//Login Controller
-wink.controller("AppCtrl", function($scope, $state, $firebaseAuth, $cordovaOauth, Auth) {
-   
-  $scope.login = function() {
-    $cordovaOauth.facebook("1684910905080080", ["email"]).then(function(result) {
-        Auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
-            console.log(JSON.stringify(authData));
-            $state.go('tab.dash');
-        }, function(error) {
-            console.error("ERROR: " + error);
-        });
-    }, function(error) {
-        console.log("ERROR: " + error);
-    });
+//Intro Controller
+wink.controller('AppCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
+ 
+  // Called to navigate to the main app
+  $scope.next = function() {
+    $ionicSlideBoxDelegate.next();
   };
-  Auth.$onAuth(function(authData) {
-    if (authData === null) {
-      $state.go('login');
-    } else {
-      $state.go('tab.dash');
-    }
-    $scope.authData = authData; // This will display the user's name in our view
-  });
+  $scope.previous = function() {
+    $ionicSlideBoxDelegate.previous();
+  };
+  $scope.skip = function() {
+    $ionicSlideBoxDelegate.slide(4);
+  };
+
+  // Called each time the slide changes
+  $scope.slideChanged = function(index) {
+    $scope.slideIndex = index;
+  };
 });
+
+
+
+
+//Login Controller
+//wink.controller("AppCtrl", function($scope, $state, $firebaseAuth, $cordovaOauth, Auth) {
+   
+//  $scope.login = function() {
+//    $cordovaOauth.facebook("1684910905080080", ["email"]).then(function(result) {
+//        Auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
+//            console.log(JSON.stringify(authData));
+//            $state.go('tab.dash');
+//        }, function(error) {
+//            console.error("ERROR: " + error);
+//        });
+//    }, function(error) {
+//        console.log("ERROR: " + error);
+//    });
+//  };
+//  Auth.$onAuth(function(authData) {
+//    if (authData === null) {
+//      $state.go('login');
+//    } else {
+//      $state.go('tab.dash');
+//    }
+//    $scope.authData = authData; // This will display the user's name in our view
+//  });
+//});
 
 //Testing this facebook login
 //wink.controller("AppCtrl", function($scope, $state, $firebaseAuth, Auth) {

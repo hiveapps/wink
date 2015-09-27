@@ -1,15 +1,93 @@
-<ion-view view-title="Login">
+<ion-view view-title="Wink">
+	
+	<ion-nav-buttons side="left">
+		<button class="button button-positive button-clear" ng-click="previous()" ng-show="slideIndex > 0" style="color: #ffffff;">
+		Previous
+		</button>
+	</ion-nav-buttons>
+	
+	<ion-nav-buttons side="right"> 
+		<button class="button button-positive button-clear" ng-click="next()" ng-show="slideIndex != 4" style="color: #ffffff;">
+		Next
+		</button>
+	</ion-nav-buttons>
+	<ion-slide-box class="has-header" on-slide-changed="slideChanged(index)" show-pager="false">
+		
+		<ion-slide>
+			<h3 style="text-align: center;">Thank you for choosing Wink!</h3>
+			
+			<p style="text-align: center; font-size: 16px;">We've worked super hard to make you happy.</p>
+		
+			<label class="item" style="border: none; text-align: center;">
+				<button class="button button-positive button-clear" ng-click="skip()" style="color: #000000;">
+					Skip Tutorial
+				</button>
+			</label>
+		</ion-slide>
+		
+		<ion-slide>
+			<h3 style="text-align: center;">Our Goal</h3>
+		
+			<p style="text-align: center;">Wink connect's people through location based posting</p>
+		</ion-slide>
+		
+		<ion-slide>
+			<h3 style="text-align: center;">Understanding The Thread</h3>
+			
+			<p>Posts within X miles of your location will appear in your feed. You may Accept posts that you think may pertain to you as well as Tag your friends in posts that fit their description</p>
+		</ion-slide>
+		
+		<ion-slide>
+			<h3 style="text-align: center;">Accepting Posts</h3>
+			
+			<p>Accepting posts will allow the original author of the post to see some of your information to help them decide if you are actually the person they posted about. This allows original poster to find potential matches, but keeps their information private until they think they have found the person they posted about. </p>
+		</ion-slide>
+		
+		<ion-slide>
+			<div id="logo">
+				<img src="img/Wink Logo.svg" class="full-image">
+			</div>
+			<label class="item" style="border: none;">
+				<button class="button button-block button-positive" ng-click="login()">
+				Login with Facebook
+				</button>
+			</label>
+		</ion-slide>
+	
+	</ion-slide-box>
+	<!--<ion-content>
+		<ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true">
+			<ion-slide>
+				<img src="img/Wink Logo.svg" class="full-image">
+			</ion-slide>
+			<ion-slide>
+				<div class="box yellow"><h1>YELLOW</h1></div>
+			</ion-slide>
+			<ion-slide>
+				<div class="box pink"><h1>PINK</h1></div>
+			</ion-slide>
+		</ion-slide-box>
+		<label class="item" style="border: none;">
+			<button class="button button-block button-positive" ng-click="login()">
+			Login with Facebook
+			</button>
+		</label>
+	</ion-content> -->
+</ion-view>
+
+
+<!--<ion-view view-title="Login">
 	<ion-content ng-controller="AppCtrl">
 		<div class="row">
 			<div class="col"><img src="img/Wink Logo.svg" class="full-image"></div>
 		</div>
-		<label class="item">
+		<label class="item" style="border: none;">
 			<button class="button button-block button-positive" ng-click="login()">
 			Login with Facebook
 			</button>
 		</label>
 	</ion-content>
-</ion-view>
+</ion-view> -->
 
 <!--
 <ion-view view-title="Login">

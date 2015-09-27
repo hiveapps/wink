@@ -7719,9 +7719,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 .platform-android .sub-header {
   margin-top: 50px !important; }
 
-.sub_map {
-  margin-bottom: -20px !important; }
-
 .platform-ios.platform-cordova:not(.fullscreen) .has-subheader {
   top: 50px !important; }
 

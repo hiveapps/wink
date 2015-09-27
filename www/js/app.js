@@ -35,13 +35,14 @@ wink.config(function($stateProvider, $urlRouterProvider) {
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html' //may have to change this to 'templates/login.html' once login page is default again
+    templateUrl: 'templates/tabs.html'
   })
 
   // Each tab has its own nav history stack:
   .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
+      controller: 'AppCtrl'
   })
   .state('tab.dash', {
     url: '/dash',
@@ -180,6 +181,6 @@ wink.config(function($stateProvider, $urlRouterProvider) {
     });
 
   // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('tab/dash');
+      $urlRouterProvider.otherwise('/login');
 
 });
