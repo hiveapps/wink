@@ -44,19 +44,19 @@ wink.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/login.html',
       controller: 'AppCtrl'
   })
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.thread', {
+    url: '/thread',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-thread': {
+        templateUrl: 'templates/tab-thread.html',
+        controller: 'ThreadCtrl'
       }
     }
   })
     .state('tab.map', {
     url: '/map',
     views: {
-      'tab-dash': {
+      'tab-thread': {
         templateUrl: 'templates/tab-map.html',
       }
     }
@@ -64,7 +64,7 @@ wink.config(function($stateProvider, $urlRouterProvider) {
     .state('tab.postDetails', {
     url: '/postDetails',
     views: {
-      'tab-dash': {
+      'tab-thread': {
         templateUrl: 'templates/tab-postDetails.html',
       }
     }
@@ -110,7 +110,6 @@ wink.config(function($stateProvider, $urlRouterProvider) {
     views: {
       'tab-profile': {
         templateUrl: 'templates/tab-profile.html',
-        controller: 'ProfileCtrl'
       }
     }
   })
@@ -123,54 +122,6 @@ wink.config(function($stateProvider, $urlRouterProvider) {
       }
     }
   })
-      .state('tab.editprofile', {
-      url: '/editprofile',
-      views: {
-        'tab-profile': {
-          templateUrl: 'templates/tab-editprofile.html'
-        }
-      }
-    })
-      .state('tab.general', {
-      url: '/general',
-      views: {
-        'tab-profile': {
-          templateUrl: 'templates/tab-general.html'
-        }
-      }
-    })
-      .state('tab.notificationsettings', {
-      url: '/notificationsettings',
-      views: {
-        'tab-profile': {
-          templateUrl: 'templates/tab-notificationsettings.html'
-        }
-      }
-    })
-    .state('tab.privacy', {
-      url: '/privacy',
-      views: {
-        'tab-profile': {
-          templateUrl: 'templates/tab-privacy.html'
-        }
-      }
-    })
-    .state('tab.locationsettings', {
-      url: '/locationsettings',
-      views: {
-        'tab-profile': {
-          templateUrl: 'templates/tab-locationsettings.html'
-        }
-      }
-    })
-    .state('tab.blockingsettings', {
-      url: '/blockingsettings',
-      views: {
-        'tab-profile': {
-          templateUrl: 'templates/tab-blockingsettings.html'
-        }
-      }
-    })
     .state('tab.terms', {
       url: '/terms',
       views: {

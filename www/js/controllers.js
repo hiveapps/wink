@@ -33,7 +33,7 @@ wink.controller('AppCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
 //    $cordovaOauth.facebook("1684910905080080", ["email"]).then(function(result) {
 //        Auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
 //            console.log(JSON.stringify(authData));
-//            $state.go('tab.dash');
+//            $state.go('tab.thread');
 //        }, function(error) {
 //            console.error("ERROR: " + error);
 //        });
@@ -45,7 +45,7 @@ wink.controller('AppCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
 //    if (authData === null) {
 //      $state.go('login');
 //    } else {
-//      $state.go('tab.dash');
+//      $state.go('tab.thread');
 //    }
 //    $scope.authData = authData; // This will display the user's name in our view
 //  });
@@ -75,7 +75,7 @@ wink.controller('AppCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
 //        $state.go('login');
 //      } else {
 //        console.log("Logged in as", authData.uid);
-//        $state.go('tab.dash');
+//        $state.go('tab.thread');
 //      }
 //      $scope.authData = authData; // This will display the user's name in our view
 //    });
@@ -93,7 +93,7 @@ wink.controller('AppCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
 //      if (error) {
 //        console.log("Error creating user:", error);
 //      } else {
-//        $state.go('tab.dash');
+//        $state.go('tab.thread');
 //      }
 //    });
 //  }
@@ -105,7 +105,7 @@ wink.controller('AppCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
 //      if (error) {
 //        console.log("Login Failed!", error);
 //      } else {
-//        $state.go('tab.dash');
+//        $state.go('tab.thread');
 //      }
 //    });
 //  }
@@ -132,7 +132,7 @@ wink.controller('addController',function($scope,$firebaseArray, $state, postServ
 
 
 //Thread controller
-wink.controller('DashCtrl', function($scope) {
+wink.controller('ThreadCtrl', function($scope) {
 
 });
 
@@ -309,11 +309,7 @@ wink.controller('NearbyCtrl', function($scope, $ionicPopover) {
 wink.controller('NotificationsCtrl', function($scope) {});
 
 
-//Profile Form Controller - This removes the disabled parameter on the Profile input fields
-wink.controller("ProfileCtrl", function($scope) {
-  $scope.mydisabled = true;
-});
-
+//Edit Profile Controller
 wink.controller("ClickToEditCtrl", function($scope) {
   $scope.title = "";
 });
@@ -344,7 +340,7 @@ wink.controller('AccountCtrl', function($scope, $state, $ionicModal) {
   
   $scope.emailNotification = {checked: true};
   
-  //Logout
+  //Logout Functionality
   $scope.logout = function() {
     $state.go('login');
   };
