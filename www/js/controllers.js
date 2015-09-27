@@ -284,8 +284,12 @@ wink.controller('NotificationsCtrl', function($scope) {});
 
 
 //Profile Form Controller - This removes the disabled parameter on the Profile input fields
-wink.controller("DisableCtrl", function($scope) {
+wink.controller("ProfileCtrl", function($scope) {
   $scope.mydisabled = true;
+});
+
+wink.controller("ClickToEditCtrl", function($scope) {
+  $scope.title = "";
 });
 
 

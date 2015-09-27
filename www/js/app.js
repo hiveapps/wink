@@ -108,7 +108,8 @@ wink.config(function($stateProvider, $urlRouterProvider) {
     url: '/profile',
     views: {
       'tab-profile': {
-        templateUrl: 'templates/tab-profile.html'
+        templateUrl: 'templates/tab-profile.html',
+        controller: 'ProfileCtrl'
       }
     }
   })
@@ -179,6 +180,6 @@ wink.config(function($stateProvider, $urlRouterProvider) {
     });
 
   // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/login');
+      $urlRouterProvider.otherwise('tab/dash');
 
 });
