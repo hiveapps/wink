@@ -14,7 +14,7 @@ wink.controller('AppCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
     $ionicSlideBoxDelegate.slide(4);
   };
   $scope.restart = function() {
-    $ionicSlideBoxDelegate.slide(1);
+    $ionicSlideBoxDelegate.slide(0);
   };
 
   // Called each time the slide changes
