@@ -30,7 +30,7 @@ wink.factory('messageService', function($firebaseArray) {
 wink.factory("Auth", function($firebaseAuth) {
   var usersRef = new Firebase("https://wink-connections.firebaseio.com/users");
   return $firebaseAuth(usersRef);
-})
+});
 
 //Return Service
 wink.service('LoginService', function($q) {
