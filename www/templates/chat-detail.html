@@ -6,6 +6,11 @@
 -->
 <ion-view view-title="{{chat.name}}">
   <ion-content class="myContent" style="height: 100%">
+    <ion-list>
+      <ion-item ng-repeat="message in messages">
+        {{message.messageDetails}}
+      </ion-item>
+    </ion-list>
   </ion-content>
   <ion-footer-bar align-title="left" class="bar-royal">
     <label class="item item-input" style="width: 77%; margin-right: 5%; padding-left: 5px; border-top: none;">

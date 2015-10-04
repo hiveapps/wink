@@ -49,7 +49,6 @@ wink.config(function($stateProvider, $urlRouterProvider) {
     views: {
       'tab-thread': {
         templateUrl: 'templates/tab-thread.html',
-        controller: 'ThreadCtrl'
       }
     }
   })

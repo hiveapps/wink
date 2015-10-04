@@ -25,7 +25,7 @@
     <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
     </ion-refresher>
        
-      <div class="list card has-header" style="width: 100%; margin-left: 0px; padding: 0;">
+      <div class="list card has-header" style="width: 100%; margin-left: 0px; padding: 0;" ng-controller="postCtrl">
         
         <div class="item item-avatar threadCard-header" style="background-color: #45C496; border-bottom: .1em solid black;" ui-sref="tab.postDetails">
           <img src="img/Wink Bunny LG.svg">
@@ -33,12 +33,8 @@
           <p style="color: #ffffff;">- about 30 minutes ago</p>
         </div>
       
-        <div class="item item-body" ui-sref="tab.postDetails">
-          <p>
-            This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-            the content is from a card-body consisting of an image and paragraph text. The footer
-            consists of tabs, icons aligned left, within the card-footer.
-          </p>
+        <div class="item item-body" ng-repeat="post in postList" ui-sref="tab.postDetails">
+          {{post}}
         </div>
       
         <div class="item tabs tabs-secondary tabs-icon-left" ng-controller="AcceptCtrl" style="background-color: #ffffff;">

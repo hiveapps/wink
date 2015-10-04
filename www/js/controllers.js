@@ -132,9 +132,15 @@ wink.controller('addController',function($scope,$firebaseArray, $state, postServ
 
 
 //Thread controller
-wink.controller('ThreadCtrl', function($scope) {
+//wink.controller('listCtrl',function($scope,postService){
+//	$scope.posts = postService.all;
+//});
 
-});
+//wink.controller('postCtrl',function($scope,postService,$stateParams,$state){
+//	$scope.posts = postService.all;
+//  $scope.singlePost = postService.get($stateParams.id);
+//  $scope.postList = $scope.singlePost.postDescription;
+//});
 
 
 //Accept button Controller
@@ -226,6 +232,8 @@ wink.controller('ChatDetailCtrl',function($scope,$firebaseArray, $state, $stateP
       };
       $scope.reset();
 	};
+  //Message return
+  $scope.messages = messageService.all;
 });
 
 
