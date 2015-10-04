@@ -132,7 +132,7 @@ wink.controller('addController',function($scope,$firebaseArray, $state, postServ
 
 
 //Thread controller
-wink.controller('listCtrl',function($scope,postService){
+wink.controller('ThreadCtrl',function($scope,postService){
 	$scope.posts = postService.all;
 });
 
