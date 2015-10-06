@@ -27,17 +27,17 @@
        
       <div class="list card has-header has-footer" style="width: 100%; margin-left: 0px; padding: 0;" ng-repeat="post in posts">
         
-        <div class="item item-avatar threadCard-header" style="background-color: #45C496; border-bottom: .1em solid black;" ui-sref="tab.postDetails">
-          <img src="img/Wink Bunny LG.svg">
-          <h2 style="color: #ffffff;">First Name</h2>
-          <p style="color: #ffffff;">- about 30 minutes ago</p>
+        <div class="item item-avatar" style="background-color: #f7fbfa; padding-bottom: 0px;" ui-sref="tab.postDetails">
+          <img src="img/Wink Bunny LG.svg" style="padding-bottom: 0px;">
+          <h2 style="color: #000000; padding-bottom: 0px;">First Name</h2>
+          <p style="color: #000000; padding-bottom: 0px;">- about 30 minutes ago</p>
         </div>
       
-        <div class="item item-body" ui-sref="tab.postDetails">
+        <div class="item item-body" ui-sref="tab.postDetails" style="background-color: #f7fbfa; border-top: none; padding-top: 0px;">
           {{post.postDescription}}
         </div>
       
-        <div class="item tabs tabs-secondary tabs-icon-left" ng-controller="AcceptCtrl" style="background-color: #ffffff;">
+        <div class="item tabs tabs-secondary tabs-icon-left" ng-controller="AcceptCtrl" style="background-color: #f7fbfa;">
           <a class="tab-item" style="font-size: 12px; color: #009161;">
             <i class="icon ion-checkmark-round"></i>
             Wink
