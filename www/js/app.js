@@ -64,7 +64,7 @@ wink.config(function($stateProvider, $urlRouterProvider) {
     url: '/postDetails',
     views: {
       'tab-thread': {
-        templateUrl: 'templates/tab-postDetails.html',
+        templateUrl: 'templates/tab-postDetails.html'
       }
     }
   })
