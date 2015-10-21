@@ -1,5 +1,14 @@
-<ion-view view-title="Chats">
-  
+<ion-view>
+  <ion-nav-title>
+    <div class="item item-input-inset" style="background-color: transparent; padding: 2%; border: none;">
+      <label class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search">
+      </label>
+      <button class="button button-icon ion-search" style="color: #ffffff; margin-left: 2%; padding-right: 0px;">
+      </button>
+    </div>
+  </ion-nav-title>
   <ion-content class="myContent">
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
