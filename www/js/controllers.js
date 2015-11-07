@@ -116,14 +116,14 @@ wink.controller('addController',function($scope,$firebaseArray, $state, postServ
 	$scope.submitPost = function(){
 		$scope.newPost = postService.all;
 		$scope.newPost.$add({
-			postDescription: $scope.postDescription,
-			postLocation: $scope.postLocation
+			postTitle: $scope.postTitle,
+			postDescription: $scope.postDescription
 		});
     $scope.master= null;
     
       $scope.reset = function() {
+        $scope.postTitle = angular.copy($scope.master);
         $scope.postDescription = angular.copy($scope.master);
-        $scope.postLocation = angular.copy($scope.master);
         if ($scope.form) $scope.form.$setPristine();
       };
       $scope.reset();

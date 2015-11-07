@@ -66,22 +66,24 @@
 				<div id="logo">
 					<img src="img/Wink Logo.svg" class="full-image">
 				</div>
+				
+				<label class="item" style="border: none; margin-top: -20%; background-color: transparent;">
+					<button class="button button-block button-positive" ui-sref="tab.thread">
+					Login with Facebook
+					</button>
+				</label>
+				
+				<label class="item" style="border: none; margin-top: -10%; text-align: center; background-color: transparent;" ng-show="slideIndex === 4">
+					<button class="button button-positive button-clear" ng-click="restart()" style="color: #387ef5;">
+						Restart Tutorial
+					</button>
+				</label>
 			</ion-slide>
 		
 		</ion-slide-box>
-		<label class="item" style="border: none; margin-top: -10%; background-color: transparent;">
-			<button class="button button-block button-positive" ui-sref="tab.thread">
-			Login with Facebook
-			</button>
-		</label>
 		<label class="item" style="border: none; margin-top: -5%; text-align: center; background-color: transparent;" ng-show="slideIndex != 4">
 			<button class="button button-positive button-clear" ng-click="skip()" style="color: #387ef5;">
 				Skip Tutorial
-			</button>
-		</label>
-		<label class="item" style="border: none; margin-top: -5%; text-align: center; background-color: transparent;" ng-show="slideIndex === 4">
-			<button class="button button-positive button-clear" ng-click="restart()" style="color: #387ef5;">
-				Restart Tutorial
 			</button>
 		</label>
 	</ion-content>

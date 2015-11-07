@@ -1,29 +1,50 @@
 var wink = angular.module('wink.directives', []);
 
-//Flipper Directives
-wink.directive("flipper", function() {
-    return {
-        restrict: "E",
-        template: "<div class='flipper' ng-transclude ng-class='{ flipped: flipped }'></div>",
-        transclude: true,
-        scope: {
-            flipped: "="
-        }
-    };
-});
+//Search Bar Directives
+wink.directive('searchBar', [function () {
+	return {
+		scope: {
+			ngModel: '='
+		},
+		require: ['^ionNavBar', '?ngModel'],
+		restrict: 'E',
+		replace: true,
+		template: '<ion-nav-buttons side="right">'+'<div class="searchBar">'+'<div class="searchTxt" ng-show="ngModel.show">'+'<div class="bgdiv"></div>'+'<div class="bgtxt">'+'<input type="text" placeholder="Procurar..." ng-model="ngModel.txt">'+'</div>'+'</div>'+'<i class="icon placeholder-icon" ng-click="ngModel.txt=\'\';ngModel.show=!ngModel.show"></i>'+'</div>'+'</ion-nav-buttons>',
+		
+		compile: function (element, attrs) {
+			var icon=attrs.icon
+					|| (ionic.Platform.isAndroid() && 'ion-android-search')
+					|| (ionic.Platform.isIOS()     && 'ion-ios7-search')
+					|| 'ion-search';
 
-wink.directive("front", function() {
-    return {
-        restrict: "E",
-        template: "<div class='front tile' ng-transclude></div>",
-        transclude: true
-    };
-});
+angular.element(element[0].querySelector('.icon')).addClass(icon);
+			
+			return function($scope, $element, $attrs, ctrls) {
+				var navBarCtrl = ctrls[0];
+				$scope.navElement = $attrs.side === 'right' ? navBarCtrl.rightButtonsElement : navBarCtrl.leftButtonsElement;
+				
+			};
+		},
+		controller: ['$scope','$ionicNavBarDelegate', function($scope,$ionicNavBarDelegate){
+			var title, definedClass;
+			$scope.$watch('ngModel.show', function(showing, oldVal, scope) {
+				if(showing!==oldVal) {
+					if(showing) {
+						if(!definedClass) {
+							var numicons=$scope.navElement.children().length;
 
-wink.directive("back", function() {
-    return {
-        restrict: "E",
-        template: "<div class='back tile' ng-transclude></div>",
-        transclude: true
-    }
-});
+angular.element($scope.navElement[0].querySelector('.searchBar')).addClass('numicons'+numicons);
+						}
+						
+						title = $ionicNavBarDelegate.getTitle();
+						$ionicNavBarDelegate.setTitle('');
+					} else {
+						$ionicNavBarDelegate.setTitle(title);
+					}
+				} else if (!title) {
+					title = $ionicNavBarDelegate.getTitle();
+				}
+			});
+		}]
+	};
+}])
