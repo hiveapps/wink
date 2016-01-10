@@ -111,14 +111,21 @@ wink.controller('AppCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
 //  }
 //});
 
-//Submit post controller
+//Add controller to add posts into firebase
 wink.controller('addController',function($scope,$firebaseArray, $state, postService){
-	$scope.submitPost = function(){
-		$scope.newPost = postService.all;
-		$scope.newPost.$add({
-			postTitle: $scope.postTitle,
-			postDescription: $scope.postDescription
-		});
+	var ref = new Firebase("https://wink-connections.firebaseio.com/");
+  var postsRef = ref.child("posts");
+  $scope.submitPost = function(){
+
+      var newPostRef = postsRef.push();
+      newPostRef.set({
+        postTitle: $scope.postTitle,
+        postDescription: $scope.postDescription
+      });
+    
+    //This resets the form to master which is null
+    //Still need to apply some time of form reset
+    //to the "Cancel" button, needs troubleshooting.
     $scope.master= null;
     
       $scope.reset = function() {
